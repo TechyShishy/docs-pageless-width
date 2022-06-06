@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Docs Pageless Width",
+    "version": "0.0.1",
+    "permissions": [
+        "scripting",
+        "webNavigation"
+    ],
+    "host_permissions": [
+        "*://docs.google.com/*"
+    ],
+    "background": {
+        "service_worker": "background.ts",
+        "type": "module"
+    },
+    "action": {}
+}
