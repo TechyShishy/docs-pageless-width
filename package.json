@@ -1,7 +1,19 @@
 {
+  "name": "docs-pageless-width",
+  "version": "0.0.1",
   "devDependencies": {
     "@parcel/config-webextension": "^2.6.0",
     "@types/chrome": "^0.0.188",
-    "parcel": "^2.6.0"
+    "archiver": "^5.3.1",
+    "parcel": "^2.6.0",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "build": "parcel build manifest.json",
+    "predist": "yarn run clean",
+    "dist": "parcel build manifest.json --no-source-maps --no-content-hash",
+    "clean": "rimraf dist docs-pageless-width.zip",
+    "prezip": "yarn run dist",
+    "zip": "node zip.js docs-pageless-width.zip dist/*"
   }
 }
